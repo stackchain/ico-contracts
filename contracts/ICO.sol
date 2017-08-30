@@ -66,7 +66,7 @@ contract ICO {
 
       if (_sold >= _min && _sold < _max) {
         uint bonusedPart = min(_value, _max - _sold);
-        _bonus += bonusedPart * MIN_TOKEN_PRICE / _bonusPricePattern[i];
+        _bonus += bonusedPart * _bonusPricePattern[i] / MIN_TOKEN_PRICE - bonusedPart;
         _value -= bonusedPart;
         _sold += bonusedPart;
       }

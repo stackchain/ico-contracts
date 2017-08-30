@@ -26,7 +26,7 @@ contract ICO {
   modifier teamOnly { require(msg.sender == team); _; }
   modifier robotOnly { require(msg.sender == tradeRobot); _; }
 
-  uint tokensSold = 0;
+  uint public tokensSold = 0;
 
   enum IcoState { Created, Running, Paused, Finished }
   IcoState icoState = IcoState.Created;

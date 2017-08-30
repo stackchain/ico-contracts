@@ -157,8 +157,6 @@ contract ICO {
 
 
   function doMigration(address _investor) internal {
-    require(icoState != IcoState.Finished);
-
     uint _atpBalance = preICO.balanceOf(_investor);
     require(_atpBalance > 0);
 
